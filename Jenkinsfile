@@ -42,10 +42,10 @@ pipeline {
         SH 'docker login -u ${CREDENTIALS_USR} -p ${CREDENTIALS_PSW}
       }
     }
-    // stage ("Push to dockerHub"){
-    //   steps{
-    //     sh 'docker push georgeelhamy/jenkins:latest'
-    //   }
-    // }
+    stage ("Push to dockerHub"){
+      steps{
+        sh 'docker push georgeelhamy/jenkins:latest'
+      }
+    }
   }
 }
