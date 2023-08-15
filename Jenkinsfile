@@ -39,7 +39,7 @@ pipeline {
       steps{
         sh 'echo usernamre = ${CREDENTIALS_USR}'
         sh 'echo password = ${CREDENTIALS_PSW}'
-        SH 'docker login -u ${CREDENTIALS_USR} -p ${CREDENTIALS_PSW}
+        sh 'docker login -u ${CREDENTIALS_USR} -p ${CREDENTIALS_PSW}'
       }
     }
     stage ("Push to dockerHub"){
