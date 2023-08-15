@@ -17,11 +17,20 @@ pipeline {
         sh 'npm run test'
       }
     }
-
     stage ("Build"){
       steps{
         sh 'npm run build'
       }
-    }    
+    } 
+    stage ("Build Dockerfile") {
+      steps{
+        sh 'docker build -t georgeelhamy/jenkins:latest'
+      }
+    }
+    // stage ("Push to dockerHub"){
+    //   steps{
+    //     sh 'docker push georgeelhamy/jenkins:latest'
+    //   }
+    // }
   }
 }
