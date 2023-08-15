@@ -1,8 +1,8 @@
 pipeline {
   agent any 
-  environment{
-    CREDENTIALS = credentials('dockerhub')
-  }
+    environment{
+      CREDENTIALS = credentials('dockerhub')
+    }
   stages {
     stage  ("Install dependeincies") {
       agent {
