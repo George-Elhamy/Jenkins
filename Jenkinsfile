@@ -4,32 +4,32 @@ pipeline {
       CREDENTIALS = credentials('dockerhub')
     }
   stages {
-    stage  ("Install dependeincies") {
-      agent {
-        docker {image 'node:lts-buster-slim'}
-      }
-      steps {
-        sh 'pwd'
-        sh 'ls'
-        sh 'npm install'
-      }
-    }
-    stage ("Test"){
-      agent {
-        docker {image 'node:lts-buster-slim'}
-      }
-      steps{
-        sh 'npm run test'
-      }
-    }
-    stage ("Build"){
-      agent {
-        docker {image 'node:lts-buster-slim'}
-      }
-      steps{
-        sh 'npm run build'
-      }
-    } 
+    // stage  ("Install dependeincies") {
+    //   agent {
+    //     docker {image 'node:lts-buster-slim'}
+    //   }
+    //   steps {
+    //     sh 'pwd'
+    //     sh 'ls'
+    //     sh 'npm install'
+    //   }
+    // }
+    // stage ("Test"){
+    //   agent {
+    //     docker {image 'node:lts-buster-slim'}
+    //   }
+    //   steps{
+    //     sh 'npm run test'
+    //   }
+    // }
+    // stage ("Build"){
+    //   agent {
+    //     docker {image 'node:lts-buster-slim'}
+    //   }
+    //   steps{
+    //     sh 'npm run build'
+    //   }
+    // } 
     stage ("Build Dockerfile") {
       steps{
         sh 'docker build -t georgeelhamy/jenkins:latest'
