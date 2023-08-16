@@ -32,7 +32,7 @@ pipeline {
     } 
     stage ("Build Dockerfile") {
       steps{
-        sh 'docker build -t georgeelhamy/jenkins:latest'
+        sh 'docker build . -t georgeelhamy/jenkins:latest'
       }
     }
     stage ("login") {
